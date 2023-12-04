@@ -31,7 +31,7 @@ namespace TechnicalTest.Controllers
         {
             //calling CalculateAge method from IAgeCalculator to calculate age based on selected date.
             var resultAge = _ageCalculator.CalculateAge(selectedDate);
-            ViewBag.Message = "Age as per today is " + "Years : " + resultAge.Age + " , Monhts: " + resultAge.Month + " , Days: " + resultAge.Days;
+            ViewBag.Message = "As per calander age is " + "Years : " + resultAge.Age + " , Months: " + resultAge.Month + " , Days: " + resultAge.Days;
             return View();
         }
         public IActionResult Privacy()
