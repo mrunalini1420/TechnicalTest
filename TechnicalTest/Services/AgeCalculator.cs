@@ -58,12 +58,12 @@ namespace TechnicalTest.Services
             {
                 for (int i = 1; i <= 12; i++)
                 {
-                    if (previousDate.AddMonths(i) == currentDate)
+                    if (previousDate.AddMonths(i) == DateTime.Now)
                     {
                         months = i;
                         break;
                     }
-                    else if (previousDate.AddMonths(i) >= currentDate)
+                    else if (previousDate.AddMonths(i) >= DateTime.Now)
                     {
                         months = i - 1;
                         break;
