@@ -21,7 +21,7 @@ namespace TechnicalTest.Services
             DetailsModel detailsModel = new DetailsModel();
             try
             {
-                if (dateofBirth.ToString() != "01/01/0001 00:00:00")
+                if ( dateofBirth<=DateTime.Now)
                 {
                     DateTime currentDate = DateTime.Now;
                     //Age calculation in years
@@ -35,7 +35,7 @@ namespace TechnicalTest.Services
                 }
                 else
                     //when date is invalid we will return message into description
-                    detailsModel.Message = "Invalid date format";
+                    detailsModel.Message = "Date of birth should not be greater than today's date";
             }
             catch (Exception ex)
             {

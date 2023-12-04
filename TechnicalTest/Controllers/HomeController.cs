@@ -31,7 +31,14 @@ namespace TechnicalTest.Controllers
         {
             //calling CalculateAge method from IAgeCalculator to calculate age based on selected date.
             var resultAge = _ageCalculator.CalculateAge(selectedDate);
-            ViewBag.Message = "As per calander age is " + "Years : " + resultAge.Age + " , Months: " + resultAge.Month + " , Days: " + resultAge.Days;
+            if (resultAge.Message != String.Empty)
+            {
+                ViewBag.Message = "Date of birth should not be greater than today's date";
+            }
+            else
+            {
+                ViewBag.Message = "As per calander age is " + "Years : " + resultAge.Age + " , Months: " + resultAge.Month + " , Days: " + resultAge.Days;
+            }
             return View();
         }
         public IActionResult Privacy()
