@@ -28,7 +28,7 @@ namespace TechnicalTest.Services
                     detailsModel.Age = new DateTime(DateTime.Now.Subtract(Convert.ToDateTime(dateofBirth)).Ticks).Year - 1;
                     //Months calculation based on current date and previousdate
                     DateTime previousDate = Convert.ToDateTime(dateofBirth).AddYears(detailsModel.Age);
-                    detailsModel.Month = GetMonths(currentDate, previousDate);
+                    detailsModel.Month = GetMonths(previousDate);
                     //Days calculation
                     detailsModel.Days = currentDate.Subtract(previousDate.AddMonths(detailsModel.Month)).Days;
                     detailsModel.Message = string.Empty;
@@ -51,7 +51,7 @@ namespace TechnicalTest.Services
         /// <param name="currentDate"></param>
         /// <param name="previousDate"></param>
         /// <returns>Months calculation logic</returns>
-        private int GetMonths(DateTime currentDate,DateTime previousDate)
+        private int GetMonths(DateTime previousDate)
         {
             int months = 0;
             try
