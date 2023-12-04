@@ -1,5 +1,4 @@
-﻿@model TechnicalTest.Models.DetailsModel;
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -10,7 +9,7 @@
     @using (Html.BeginForm("Index", "Home", FormMethod.Post))
     {
         @Html.Label("Date of Birth: ")
-        @Html.TextBox("SelectedDate", "", new {  })
+        @Html.TextBox("SelectedDate", "DD/MM/YYYY", new {  })
         <input type="submit" id="submitId" value="Submit"/>
         <p id="message" class="text-danger" style="margin-right:22px;"></p>
        
