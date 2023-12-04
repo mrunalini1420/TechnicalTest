@@ -14,7 +14,7 @@
         <input type="submit" id="submitId" value="Submit"/>
         <p id="message" class="text-danger" style="margin-right:22px;"></p>
        
-        <h5>@ViewBag.Message</h5>
+        <h5 id="viewbagMessageId">@ViewBag.Message</h5>
     }
 </div>
     <!-- Bootstrap -->
@@ -29,9 +29,11 @@
     <!-- Bootstrap DatePicker -->
     <script type="text/javascript">
         $( "form" ).on( "submit", function() {
+                     
              if($("#SelectedDate").val()=="")
              {
-                  document.getElementById('message').innerText = "Please Enter the date";
+                  document.getElementById('viewbagMessageId').innerText="";
+                  document.getElementById('message').innerText = "Please Enter the date";                  
                   return false;
              }
         });
