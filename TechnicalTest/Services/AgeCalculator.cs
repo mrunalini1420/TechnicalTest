@@ -26,7 +26,7 @@ namespace TechnicalTest.Services
                     DateTime currentDate = DateTime.Now;
                     //Age calculation in years
                     detailsModel.Age = new DateTime(DateTime.Now.Subtract(Convert.ToDateTime(dateofBirth)).Ticks).Year - 1;
-                    //Months calculation based on current date and previousdate
+                    //Months calculation based on previousdate
                     DateTime previousDate = Convert.ToDateTime(dateofBirth).AddYears(detailsModel.Age);
                     detailsModel.Month = GetMonths(previousDate);
                     //Days calculation
